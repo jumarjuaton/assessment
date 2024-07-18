@@ -15,16 +15,13 @@ class CreateJournalsTable extends Migration
     {
         Schema::create('journals', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('store_id');
             $table->date('date');
             $table->unsignedBigInteger('revenue');
             $table->unsignedBigInteger('food_cost');
             $table->unsignedBigInteger('labor_cost');
             $table->unsignedBigInteger('profit');
-
             $table->timestamps();
-
             $table->foreign('store_id')->references('id')->on('stores');
         });
     }
